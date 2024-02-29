@@ -90,5 +90,12 @@ public class Letskode {
         }
     }
     @Test
-
+    public void testIframe() throws InterruptedException {
+        driver.switchTo().frame(0);
+        driver.findElement(By.xpath("//a[.='Sign In']")).click();
+        driver.findElement(By.id("email")).sendKeys("test@email.com");
+        driver.findElement(By.id("login-password")).sendKeys("abcabc");
+        driver.findElement(By.id("login")).click();
+        Thread.sleep(3000);
+    }
 }
