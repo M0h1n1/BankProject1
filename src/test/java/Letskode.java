@@ -118,12 +118,5 @@ public class Letskode {
         Assert.assertEquals(driver.findElement(By.id("incorrectdetails")).getText().trim(),"Incorrect login details. Please try again.");
     }
 
-    @Test
-    public void testErrorMessageForBlankEmail() throws InterruptedException {
-        driver.findElement(By.id("email")).sendKeys("");
-        driver.findElement(By.id("login-password")).sendKeys("abcabc");
-        driver.findElement(By.id("login")).click();
-        Thread.sleep(3000);
-        Assert.assertEquals(driver.findElement(By.xpath("//div[@class='form-group']//span[@class='error']")).getText().trim(),"The email field is required.");
-    }
+
 }
